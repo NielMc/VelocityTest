@@ -7,11 +7,12 @@
     <title>Velocity Test</title>
 </head>
 <body>
-    <button id = "find-me">Show my velocity</button><br/>
+
 <p id = "status"></p>
 <a id = "map-link" target="_blank"></a>
 <script>
-    function geoFindMe() {
+
+    setInterval(function geoFindMe() {
 
 const status = document.querySelector('#status');
 const mapLink = document.querySelector('#map-link');
@@ -41,9 +42,8 @@ if (!navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(success, error);
 }
 
-}
+}, 60 * 1000); 
 
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
 </script>
 </body>
 </html>
